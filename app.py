@@ -4,7 +4,7 @@ import ibm_db_dbi as dbi
 import pandas as pd
 
 app = Flask(__name__)
-app.json.ensure_ascii = False
+# app.json.ensure_ascii = False
 @app.route('/', methods=['GET'])
 def test():
     return {"sucess": "api 部署 成功"}
