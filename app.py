@@ -5,7 +5,7 @@ import pandas as pd
 
 app = Flask(__name__)
 # app.json.ensure_ascii = False
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['POST'])
 def test():
     return {"sucess": "api 部署 成功"}
     
