@@ -6,7 +6,7 @@ WORKDIR ./app
 RUN pip install -r requirements.txt
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 
-EXPOSE 5000
+EXPOSE 8080
 
 ENTRYPOINT ["python"]
 CMD ["app.py"]
