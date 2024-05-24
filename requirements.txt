@@ -1,4 +1,4 @@
-Flask==3.0.3
+Flask==2.1.2
 Werkzeug==2.2.2
 pandas
 ibm-db==3.2.3
