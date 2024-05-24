@@ -1,0 +1,3 @@
+Flask==2.1.2
+pandas
+ibm-db==3.2.3
