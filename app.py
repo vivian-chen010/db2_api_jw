@@ -3,7 +3,11 @@ import ibm_db_dbi as dbi
 import pandas as pd
 
 app = Flask(__name__)
-
+@app.route('/', methods=['GET'])
+def test():
+    return {"sucess": "index is scucess"}
+    
+    
 @app.route('/bus_info', methods=['GET'])
 def get_bus_info():
     # 从请求中获取参数
