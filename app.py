@@ -46,4 +46,4 @@ def get_bus_info():
     return jsonify(response)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=8080)
