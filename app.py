@@ -4,7 +4,6 @@ import ibm_db_dbi as dbi
 import pandas as pd
 
 app = Flask(__name__)
-app.json.ensure_ascii = False # 解决中文乱码问题
 
 @app.route('/', methods=['GET'])
 def test():
