@@ -5,7 +5,7 @@ import pandas as pd
 
 app = Flask(__name__)
 # app.json.ensure_ascii = False
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['POST','POST'])
 def test():
     return {"sucess": "api 部署 成功"}
     
@@ -19,7 +19,7 @@ def your_view_function():
     return jsonify(response_data), 200, {'Content-Type': 'application/json; charset=utf-8'}
 
     
-@app.route('/bus_info', methods=['GET'])
+@app.route('/bus_info', methods=['GET','POST'])
 def get_bus_info():
     # 从请求中获取参数
     params = request.args
@@ -70,7 +70,7 @@ def get_bus_info():
 
   
     
-@app.route('/fetch_employeeid_attendance_date', methods=['GET'])
+@app.route('/fetch_employeeid_attendance_date', methods=['GET','POST'])
 def fetch_employeeid_attendance_date():
     # 从请求中获取参数
     params = request.args
@@ -124,7 +124,7 @@ def fetch_employeeid_attendance_date():
 
 
 
-@app.route('/fetch_employeeid_attendance_month', methods=['GET'])
+@app.route('/fetch_employeeid_attendance_month', methods=['GET','POST'])
 def fetch_employeeid_attendance_month():
     # 从请求中获取参数
     params = request.args
@@ -205,7 +205,7 @@ GROUP BY DEPARTMENT,ATTENDANCE_MONTH, EMPLOYEE_ID, POSITION
 
 
 
-@app.route('/fetch_department_attendance_month', methods=['GET'])
+@app.route('/fetch_department_attendance_month', methods=['GET','POST'])
 def fetch_department_attendance_month():
     # 从请求中获取参数
     params = request.args
@@ -287,7 +287,7 @@ GROUP BY DEPARTMENT,ATTENDANCE_MONTH, EMPLOYEE_ID, POSITION
 
 
 
-@app.route('/fetch_department_attendance_day', methods=['GET'])
+@app.route('/fetch_department_attendance_day', methods=['GET','POST'])
 def fetch_department_attendance_day():
     # 从请求中获取参数
     params = request.args
