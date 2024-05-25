@@ -21,11 +21,22 @@ def your_view_function():
     
 @app.route('/bus_info', methods=['GET','POST'])
 def get_bus_info():
+    if request.method == 'POST':
+        params = request.json
+        print(params)
+    else:
+        params = request.args
+        print(params)
+            
     # 从请求中获取参数
-    params = request.args
-    bus_route = params.get('bus_route', default=7, type=int)
-    bus_stop = params.get('bus_stop', default="haight street and filmore street").lower()
+   
+    print("request",request)
+    bus_route = params.get('bus_route')
+    bus_stop = params.get('bus_stop')
+    
     DATABASE = params.get('DATABASE')
+    print("DATABASE",DATABASE)
+    print("bus_route",bus_route)
     HOSTNAME = params.get('HOSTNAME')
     PORT = params.get('PORT')
     UID = params.get('UID')
