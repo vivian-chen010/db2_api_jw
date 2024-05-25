@@ -83,8 +83,13 @@ def get_bus_info():
     
 @app.route('/fetch_employeeid_attendance_date', methods=['GET','POST'])
 def fetch_employeeid_attendance_date():
+    if request.method == 'POST':
+        params = request.json
+        print(params)
+    else:
+        params = request.args
+        print(params)
     # 从请求中获取参数
-    params = request.args
     DATABASE = params.get('DATABASE')
     HOSTNAME = params.get('HOSTNAME')
     PORT = params.get('PORT')
@@ -92,7 +97,7 @@ def fetch_employeeid_attendance_date():
     PWD = params.get('PWD')
     
     employee_id = params.get('employee_id')
-    attendance_date = params.get('attendance_date').lower()
+    attendance_date = params.get('attendance_date')
 
     # 构建数据库连接字符串
     db2_dsn = f"DATABASE={DATABASE};HOSTNAME={HOSTNAME};PORT={PORT};PROTOCOL=TCPIP;UID={UID};PWD={PWD};SECURITY=SSL"
@@ -137,8 +142,13 @@ def fetch_employeeid_attendance_date():
 
 @app.route('/fetch_employeeid_attendance_month', methods=['GET','POST'])
 def fetch_employeeid_attendance_month():
+    if request.method == 'POST':
+        params = request.json
+        print(params)
+    else:
+        params = request.args
+        print(params)
     # 从请求中获取参数
-    params = request.args
     DATABASE = params.get('DATABASE')
     HOSTNAME = params.get('HOSTNAME')
     PORT = params.get('PORT')
@@ -146,7 +156,7 @@ def fetch_employeeid_attendance_month():
     PWD = params.get('PWD')
     
     employee_id = params.get('employee_id')
-    attendance_month = params.get('attendance_month').lower()
+    attendance_month = params.get('attendance_month')
 
     # 构建数据库连接字符串
     db2_dsn = f"DATABASE={DATABASE};HOSTNAME={HOSTNAME};PORT={PORT};PROTOCOL=TCPIP;UID={UID};PWD={PWD};SECURITY=SSL"
@@ -218,8 +228,13 @@ GROUP BY DEPARTMENT,ATTENDANCE_MONTH, EMPLOYEE_ID, POSITION
 
 @app.route('/fetch_department_attendance_month', methods=['GET','POST'])
 def fetch_department_attendance_month():
+    if request.method == 'POST':
+        params = request.json
+        print(params)
+    else:
+        params = request.args
+        print(params)
     # 从请求中获取参数
-    params = request.args
     DATABASE = params.get('DATABASE')
     HOSTNAME = params.get('HOSTNAME')
     PORT = params.get('PORT')
@@ -227,7 +242,7 @@ def fetch_department_attendance_month():
     PWD = params.get('PWD')
     
     department = params.get('department')
-    attendance_month = params.get('attendance_month').lower()
+    attendance_month = params.get('attendance_month')
 
     # 构建数据库连接字符串
     db2_dsn = f"DATABASE={DATABASE};HOSTNAME={HOSTNAME};PORT={PORT};PROTOCOL=TCPIP;UID={UID};PWD={PWD};SECURITY=SSL"
@@ -300,8 +315,13 @@ GROUP BY DEPARTMENT,ATTENDANCE_MONTH, EMPLOYEE_ID, POSITION
 
 @app.route('/fetch_department_attendance_day', methods=['GET','POST'])
 def fetch_department_attendance_day():
+    if request.method == 'POST':
+        params = request.json
+        print(params)
+    else:
+        params = request.args
+        print(params)
     # 从请求中获取参数
-    params = request.args
     DATABASE = params.get('DATABASE')
     HOSTNAME = params.get('HOSTNAME')
     PORT = params.get('PORT')
@@ -309,7 +329,7 @@ def fetch_department_attendance_day():
     PWD = params.get('PWD')
     
     department = params.get('department')
-    attendance_date = params.get('attendance_date').lower()
+    attendance_date = params.get('attendance_date')
 
     # 构建数据库连接字符串
     db2_dsn = f"DATABASE={DATABASE};HOSTNAME={HOSTNAME};PORT={PORT};PROTOCOL=TCPIP;UID={UID};PWD={PWD};SECURITY=SSL"
